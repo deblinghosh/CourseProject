@@ -1,0 +1,11 @@
+What progress was made
+Answer: I was able to create a spring boot application to
+ 1. Read and parse IMDB search result using jsoup
+ 2. Create a REST API to return a paginated response of search result
+
+What tasks remain
+Answer: Need to enhance REST API to accept query param like filter (containing search attributes), sortBy, sortOrder, count and startIndex
+
+What challenges/issues were faced
+Answer: Extracting movie name, rating, year and url from HTML document was challenging in the beginning but eventually resolved
+ by identifying unique css selectors. Introduced a dedicated function for this task.

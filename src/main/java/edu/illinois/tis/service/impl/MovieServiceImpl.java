@@ -45,10 +45,14 @@ public class MovieServiceImpl implements MovieService {
 		String navDesc = dom.select(".nav").select(".desc").text();
 		int startIndex = navDesc.indexOf("of ");
 		int endIndex = navDesc.indexOf(" titles");
-		return Integer.parseInt(
-				navDesc.substring(startIndex + 3, endIndex)
-				.replace(",","")
-		);
+		if(startIndex > -1 && endIndex > -1) {
+			return Integer.parseInt(
+					navDesc.substring(startIndex + 3, endIndex)
+							.replace(",","")
+			);
+		} else {
+			return Integer.parseInt(navDesc.substring(0, endIndex));
+		}
 	}
 
 	private List<Movie> extractMovieDetails(Document dom) {
